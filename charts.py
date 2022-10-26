@@ -167,8 +167,8 @@ def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti'
 # Load election results (once), then plot charts that depend only on the election results
 df = pd.read_csv('results-parlimen/ge14.csv')
 df['majoriti_peratus'] = df.majoriti/df.undi_keluar_peti * 100
-# jitterplot_turnout(df=df)
-# scatterplot_margin_v_turnout(df=df)
+jitterplot_turnout(df=df)
+scatterplot_margin_v_turnout(df=df)
 
 # Load basemaps(once only); relatively large (37MB) because high-res (necessary for clean parlimen --> state dissolve)
 geo_o = gpd.read_file('maps/parlimen.geojson')
@@ -180,5 +180,5 @@ geo_o = pd.merge(geo_o, df,
 for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
     choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
 
-# for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
-#     choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
+for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
+    choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
