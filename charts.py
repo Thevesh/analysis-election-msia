@@ -54,7 +54,6 @@ def scatterplot_margin_v_turnout(df=None):
 
 
 # TODO: Add manual correction for overlapping annotations
-# TODO: Support more variables?
 def choropleth_gradient(df=None, plot_for=['Malaysia'], v='peratus_keluar'):
 
     v_suffix = {'peratus_keluar': 'turnout',
@@ -87,10 +86,12 @@ def choropleth_gradient(df=None, plot_for=['Malaysia'], v='peratus_keluar'):
         fig, ax = plt.subplots()
         ax.axis('off')
 
-        vmin, vmax = geo[v].min(), geo[v].max()  # colours relative to specific range being plotted
         cmap = cmaps[v]
+        lw = 1 if s != 'Malaysia' else 0.7
+        vmin, vmax = geo[v].min(), geo[v].max()  # colours relative to specific range being plotted
+
         geo.plot(column=v, cmap=cmap, vmin=vmin, vmax=vmax, linewidth=0.07, edgecolor='black', ax=ax)
-        geo_s.plot(edgecolor='black', linewidth=1, facecolor='none', ax=ax)
+        geo_s.plot(edgecolor='black', linewidth=lw, facecolor='none', ax=ax)
         if s != 'Malaysia':
             bbox_props = dict(boxstyle='round', fc="w", ec='0.5', alpha=0.5)
             geo.apply(lambda x: ax.annotate(text=x['seat'][6:],
@@ -107,6 +108,7 @@ def choropleth_gradient(df=None, plot_for=['Malaysia'], v='peratus_keluar'):
         with warnings.catch_warnings():
             warnings.simplefilter('ignore')
             plt.savefig(f'charts/choropleth_{v_suffix[v]}{suffix}.png', bbox_inches='tight', pad_inches=0.2, dpi=400)
+        plt.close()
 
 
 def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti', threshold=100, positive=0):
@@ -156,6 +158,7 @@ def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti'
         with warnings.catch_warnings():
             warnings.simplefilter('ignore')
             plt.savefig(f'charts/choropleth_{v_suffix[v]}{suffix}.png', bbox_inches='tight', pad_inches=0.2, dpi=400)
+        plt.close()
 
 
 # ---------- Chart functions defined above, call everything below ----------
@@ -174,8 +177,8 @@ geo_o = pd.merge(geo_o, df,
                  left_on=['state', 'parlimen'],
                  right_on=['state', 'seat'], how='left')  # Merge with election results
 
-# for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
-#     choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
+for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
+    choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
 
-for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
-    choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
+# for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
+#     choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
