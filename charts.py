@@ -109,6 +109,55 @@ def choropleth_gradient(df=None, plot_for=['Malaysia'], v='peratus_keluar'):
             plt.savefig(f'charts/choropleth_{v_suffix[v]}{suffix}.png', bbox_inches='tight', pad_inches=0.2, dpi=400)
 
 
+def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti', threshold=100, positive=0):
+
+    tf.loc[tf[v] < threshold, v] = 0
+    tf.loc[tf[v] > 0, v] = 1
+
+    for s in plot_for:
+        print(s)
+        geo = tf.copy()
+        title = ''
+        suffix = ''
+        if s != 'Malaysia':
+            geo = geo[geo.state == s]
+            title = f' in {s}'
+            suffix = '_' + s.lower().replace(' ', '').replace('.', '')
+
+        v_suffix = {'tidakhadir_vs_majoriti': 'absent_v_maj',
+                    'rosak_vs_majoriti': 'rosak_v_maj'}
+        v_title = {'tidakhadir_vs_majoriti': f'Non-Voters vs Majority{title}\n\nRed Seats: Non-Voters > Majority (could have swung result)',
+                   'rosak_vs_majoriti': f'Undi-Rosak vs Majority{title}\n\nRed Seats: Undi Rosak > Majority (could have swung result)'}
+
+        geo_s = geo.copy().dissolve(by='state')
+
+        plt.rcParams.update({'font.size': 13,
+                            'font.family': 'sans-serif',
+                             'grid.linestyle': 'dotted',
+                             'figure.figsize': [8, 8],
+                             'figure.autolayout': True})
+        fig, ax = plt.subplots()
+        ax.axis('off')
+
+        cmap = 'Reds' if positive == 0 else 'Greens'
+        vmin, vmax = 0, 1.5
+        lw = 1 if s != 'Malaysia' else 0.7
+
+        geo.plot(column=v, cmap=cmap, vmin=vmin, vmax=vmax, linewidth=0.07, edgecolor='black', ax=ax)
+        geo_s.plot(edgecolor='black', linewidth=lw, facecolor='none', ax=ax)
+        if s != 'Malaysia':
+            bbox_props = dict(boxstyle='round', fc="w", ec='0.5', alpha=0.5)
+            geo.apply(lambda x: ax.annotate(text=x['seat'][6:],
+                                            xy=x.geometry.centroid.coords[0],
+                                            ha='center', va='top',
+                                            size=9, bbox=bbox_props,
+                                            wrap=True), axis=1)
+        plt.suptitle(f'GE14: {v_title[v]}')
+        with warnings.catch_warnings():
+            warnings.simplefilter('ignore')
+            plt.savefig(f'charts/choropleth_{v_suffix[v]}{suffix}.png', bbox_inches='tight', pad_inches=0.2, dpi=400)
+
+
 # ---------- Chart functions defined above, call everything below ----------
 
 
@@ -125,5 +174,8 @@ geo_o = pd.merge(geo_o, df,
                  left_on=['state', 'parlimen'],
                  right_on=['state', 'seat'], how='left')  # Merge with election results
 
-for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
-    choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
+# for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
+#     choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
+
+for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
+    choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
