@@ -87,8 +87,7 @@ def choropleth_gradient(df=None, plot_for=['Malaysia'], v='peratus_keluar'):
         fig, ax = plt.subplots()
         ax.axis('off')
 
-        # vmin, vmax = 65, 90  # hardcoded after studying data
-        vmin, vmax = geo[v].min(), geo[v].max()  # if you want colours relative to each state
+        vmin, vmax = geo[v].min(), geo[v].max()  # colours relative to specific range being plotted
         cmap = cmaps[v]
         geo.plot(column=v, cmap=cmap, vmin=vmin, vmax=vmax, linewidth=0.07, edgecolor='black', ax=ax)
         geo_s.plot(edgecolor='black', linewidth=1, facecolor='none', ax=ax)
