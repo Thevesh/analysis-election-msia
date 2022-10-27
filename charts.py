@@ -7,7 +7,13 @@ import warnings
 from constants import states, states_short
 
 
-def jitterplot_turnout(df=None):
+def jitterplot(df=None, v='peratus_keluar'):
+
+    v_suffix = {'peratus_keluar': 'turnout',
+                'rosak_vs_keseluruhan': 'undirosak'}
+    v_title = {'peratus_keluar': 'Voter Turnout',
+               'rosak_vs_keseluruhan': 'Undi Rosak Prevalence'}
+
     plt.rcParams.update({'font.size': 12,
                         'font.family': 'sans-serif',
                          'grid.linestyle': 'dashed',
@@ -17,7 +23,7 @@ def jitterplot_turnout(df=None):
     fig, ax = plt.subplots(1, 16, sharex=True, sharey=True)
     axes = ax.ravel()
     for i in range(16):
-        tf = df[df.state == states[i]].copy()[['peratus_keluar']]
+        tf = df[df.state == states[i]].copy()[[v]]
         tf.columns = ['y']
         tf['x'] = 0
         tf.plot(kind='scatter', x='x', y='y', s=25, c='red', ax=axes[i])
@@ -28,8 +34,9 @@ def jitterplot_turnout(df=None):
         axes[i].xaxis.set_visible(False)
         axes[i].set_facecolor('white')
         axes[i].set_title(states_short[i], fontsize=12, fontfamily='sans-serif')
-    plt.suptitle('GE14: Voter Turnout by State (each point = 1 seat)')
-    plt.savefig('charts/jitterplot_turnout.png', pad_inches=0.2, dpi=400)
+        axes[i].tick_params(axis=u'both', which=u'both', length=0)
+    plt.suptitle(f'GE14: {v_title[v]} by State (each point = 1 seat)')
+    plt.savefig(f'charts/jitterplot_{v_suffix[v]}.png', pad_inches=0.2, dpi=400)
 
 
 def scatterplot_margin_v_turnout(df=None):
@@ -167,18 +174,20 @@ def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti'
 # Load election results (once), then plot charts that depend only on the election results
 df = pd.read_csv('results-parlimen/ge14.csv')
 df['majoriti_peratus'] = df.majoriti/df.undi_keluar_peti * 100
-jitterplot_turnout(df=df)
 scatterplot_margin_v_turnout(df=df)
 
+for v in ['rosak_vs_keseluruhan', 'peratus_keluar']:
+    jitterplot(df=df, v=v)
+
 # Load basemaps(once only); relatively large (37MB) because high-res (necessary for clean parlimen --> state dissolve)
-geo_o = gpd.read_file('maps/parlimen.geojson')
-geo_o.loc[~geo_o.code_state.isin([12, 13, 15]), 'geometry'] = geo_o.geometry.translate(9, 4.5)  # More compact Msia map
-geo_o = pd.merge(geo_o, df,
-                 left_on=['state', 'parlimen'],
-                 right_on=['state', 'seat'], how='left')  # Merge with election results
+# geo_o = gpd.read_file('maps/parlimen.geojson')
+# geo_o.loc[~geo_o.code_state.isin([12, 13, 15]), 'geometry'] = geo_o.geometry.translate(9, 4.5)  # More compact Msia map
+# geo_o = pd.merge(geo_o, df,
+#                  left_on=['state', 'parlimen'],
+#                  right_on=['state', 'seat'], how='left')  # Merge with election results
 
-for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
-    choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
+# for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
+#     choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
 
-for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
-    choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
+# for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
+#     choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
