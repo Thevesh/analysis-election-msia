@@ -1,5 +1,9 @@
 # Local test files
 proto.ipynb 
+proto_najmi.ipynb
+proto_data.ipynb
+proto_chart.ipynb
+data-local/
 *.ipynb_checkpoints
 
 # Byte-compiled / optimized / DLL files
