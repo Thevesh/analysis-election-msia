@@ -1,6 +1,7 @@
 import pandas as pd
 import numpy as np
 import geopandas as gpd
+import os
 import matplotlib.pyplot as plt
 import warnings
 
@@ -13,6 +14,10 @@ def jitterplot(df=None, v='peratus_keluar'):
                 'rosak_vs_keseluruhan': 'undirosak'}
     v_title = {'peratus_keluar': 'Voter Turnout',
                'rosak_vs_keseluruhan': 'Undi Rosak Prevalence'}
+
+    path_output = 'charts-general'
+    if not os.path.isdir(path_output):
+        os.makedirs(path_output)
 
     plt.rcParams.update({'font.size': 12,
                         'font.family': 'sans-serif',
@@ -36,10 +41,15 @@ def jitterplot(df=None, v='peratus_keluar'):
         axes[i].set_title(states_short[i], fontsize=12, fontfamily='sans-serif')
         axes[i].tick_params(axis=u'both', which=u'both', length=0)
     plt.suptitle(f'GE14: {v_title[v]} by State (each point = 1 seat)')
-    plt.savefig(f'charts/jitterplot_{v_suffix[v]}.png', pad_inches=0.2, dpi=400)
+    plt.savefig(f'{path_output}/jitterplot_{v_suffix[v]}.png', pad_inches=0.2, dpi=400)
 
 
 def scatterplot_margin_v_turnout(df=None):
+
+    path_output = 'charts-general'
+    if not os.path.isdir(path_output):
+        os.makedirs(path_output)
+
     plt.rcParams.update({'font.size': 13,
                          'font.family': 'sans-serif',
                          'grid.linestyle': 'dashed',
@@ -57,7 +67,7 @@ def scatterplot_margin_v_turnout(df=None):
     plt.xticks(np.arange(60, 100.01, 4))
     plt.yticks(np.arange(0, 100.01, 10))
     plt.title('Winning Margin (% of Votes) vs Voter Turnout (%)\n')
-    plt.savefig('charts/scatterplot_majority_v_turnout.png', pad_inches=0.2, dpi=400)
+    plt.savefig(f'{path_output}/scatterplot_majority_v_turnout.png', pad_inches=0.2, dpi=400)
 
 
 # TODO: Add manual correction for overlapping annotations
@@ -72,6 +82,10 @@ def choropleth_gradient(df=None, plot_for=['Malaysia'], v='peratus_keluar'):
     cmaps = {'peratus_keluar': 'Blues',
              'majoriti_peratus': 'Greens',
              'rosak_vs_keseluruhan': 'Reds'}
+
+    path_output = f'charts-{v_suffix[v]}'
+    if not os.path.isdir(path_output):
+        os.makedirs(path_output)
 
     for s in plot_for:
         print(s)
@@ -114,7 +128,8 @@ def choropleth_gradient(df=None, plot_for=['Malaysia'], v='peratus_keluar'):
         plt.suptitle(f'GE14: {v_title[v]} by Parliament{title}')
         with warnings.catch_warnings():
             warnings.simplefilter('ignore')
-            plt.savefig(f'charts/choropleth_{v_suffix[v]}{suffix}.png', bbox_inches='tight', pad_inches=0.2, dpi=400)
+            plt.savefig(f'{path_output}/choropleth_{v_suffix[v]}{suffix}.png',
+                        bbox_inches='tight', pad_inches=0.2, dpi=400)
         plt.close()
 
 
@@ -133,10 +148,14 @@ def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti'
             title = f' in {s}'
             suffix = '_' + s.lower().replace(' ', '').replace('.', '')
 
-        v_suffix = {'tidakhadir_vs_majoriti': 'absent_v_maj',
-                    'rosak_vs_majoriti': 'rosak_v_maj'}
+        v_suffix = {'tidakhadir_vs_majoriti': 'absentimpact',
+                    'rosak_vs_majoriti': 'rosakimpact'}
         v_title = {'tidakhadir_vs_majoriti': f'Non-Voters vs Majority{title}\n\nRed Seats: Non-Voters > Majority (could have swung result)',
                    'rosak_vs_majoriti': f'Undi-Rosak vs Majority{title}\n\nRed Seats: Undi Rosak > Majority (could have swung result)'}
+
+        path_output = f'charts-{v_suffix[v]}'
+        if not os.path.isdir(path_output):
+            os.makedirs(path_output)
 
         geo_s = geo.copy().dissolve(by='state')
 
@@ -164,7 +183,8 @@ def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti'
         plt.suptitle(f'GE14: {v_title[v]}')
         with warnings.catch_warnings():
             warnings.simplefilter('ignore')
-            plt.savefig(f'charts/choropleth_{v_suffix[v]}{suffix}.png', bbox_inches='tight', pad_inches=0.2, dpi=400)
+            plt.savefig(f'{path_output}/choropleth_{v_suffix[v]}{suffix}.png',
+                        bbox_inches='tight', pad_inches=0.2, dpi=400)
         plt.close()
 
 
@@ -172,7 +192,7 @@ def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti'
 
 
 # Load election results (once), then plot charts that depend only on the election results
-df = pd.read_csv('results-parlimen/ge14.csv')
+df = pd.read_csv('data/ge14.csv')
 df['majoriti_peratus'] = df.majoriti/df.undi_keluar_peti * 100
 scatterplot_margin_v_turnout(df=df)
 
@@ -180,14 +200,14 @@ for v in ['rosak_vs_keseluruhan', 'peratus_keluar']:
     jitterplot(df=df, v=v)
 
 # Load basemaps(once only); relatively large (37MB) because high-res (necessary for clean parlimen --> state dissolve)
-# geo_o = gpd.read_file('maps/parlimen.geojson')
-# geo_o.loc[~geo_o.code_state.isin([12, 13, 15]), 'geometry'] = geo_o.geometry.translate(9, 4.5)  # More compact Msia map
-# geo_o = pd.merge(geo_o, df,
-#                  left_on=['state', 'parlimen'],
-#                  right_on=['state', 'seat'], how='left')  # Merge with election results
+geo_o = gpd.read_file('maps/parlimen.geojson')
+geo_o.loc[~geo_o.code_state.isin([12, 13, 15]), 'geometry'] = geo_o.geometry.translate(9, 4.5)  # More compact Msia map
+geo_o = pd.merge(geo_o, df,
+                 left_on=['state', 'parlimen'],
+                 right_on=['state', 'seat'], how='left')  # Merge with election results
 
-# for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
-#     choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
+for v in ['peratus_keluar', 'majoriti_peratus', 'rosak_vs_keseluruhan']:
+    choropleth_gradient(df=geo_o, plot_for=['Malaysia'] + states, v=v)
 
-# for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
-#     choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
+for v in ['tidakhadir_vs_majoriti', 'rosak_vs_majoriti']:
+    choropleth_binary(tf=geo_o, plot_for=['Malaysia'] + states, v=v)
