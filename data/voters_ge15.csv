@@ -1,4 +1,4 @@
-state,parlimen,dun,total,male_18_20,female_18_20,male_21_29,female_21_29,male_30_39,female_30_39,male_40_49,female_40_49,male_50_59,female_50_59,male_60_69,female_60_69,male_70_79,female_70_79,male_80_89,female_80_89,male_90+,female_90+,regular,early_a,early_b,postal_overseas,total_ge14
+state,parlimen,dun,total,male_18_20,female_18_20,male_21_29,female_21_29,male_30_39,female_30_39,male_40_49,female_40_49,male_50_59,female_50_59,male_60_69,female_60_69,male_70_79,female_70_79,male_80_89,female_80_89,male_90+,female_90+,votertype_regular,votertype_early_a,votertype_early_b,votertype_postal_overseas,total_ge14
 Perlis,P.001 Padang Besar,N.01 Titi Tinggi,13403,378,417,1507,1296,1778,1554,1189,1057,860,871,743,758,363,381,96,108,30,17,13019,0,383,1,10111
 Perlis,P.001 Padang Besar,N.02 Beseri,12128,412,334,1485,1404,1537,1456,869,845,759,798,645,668,322,343,75,135,16,25,11793,275,55,5,8914
 Perlis,P.001 Padang Besar,N.03 Chuping,14248,477,473,1475,1462,1707,1664,1281,1287,906,865,648,806,443,475,92,142,20,25,14247,0,0,1,10542
