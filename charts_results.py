@@ -192,7 +192,7 @@ def choropleth_binary(tf=None, plot_for=['Malaysia'], v='tidakhadir_vs_majoriti'
 
 
 # Load election results (once), then plot charts that depend only on the election results
-df = pd.read_csv('data/ge14.csv')
+df = pd.read_csv('data/results_parlimen_ge14.csv')
 df['majoriti_peratus'] = df.majoriti/df.undi_keluar_peti * 100
 scatterplot_margin_v_turnout(df=df)
 
