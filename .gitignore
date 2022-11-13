@@ -1,11 +1,12 @@
 # Local test files
 data_wrangle.py
 proto.ipynb 
-proto_najmi.ipynb
 proto_spr.ipynb
 proto_data.ipynb
 proto_chart.ipynb
 data-local/
+secret.py
+.vscode/
 *.ipynb_checkpoints
 
 # Byte-compiled / optimized / DLL files

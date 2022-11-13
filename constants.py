@@ -9,3 +9,5 @@ states_short = ['JHR', 'KDH', 'KTN', 'MLK', 'NSN', 'PHG', 'PNG',
 idx2state = dict(zip(states_idx, states))
 
 state2idx = {v: k for k, v in idx2state.items()}
+
+LOCAL_DATA_SPR = 'D:/data_spr/'
