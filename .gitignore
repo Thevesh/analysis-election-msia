@@ -1,9 +1,6 @@
 # Local test files
 data_wrangle.py
-proto.ipynb 
-proto_spr.ipynb
-proto_data.ipynb
-proto_chart.ipynb
+*.ipynb 
 data-local/
 secret.py
 .vscode/
