@@ -214,13 +214,13 @@ Pulau Pinang,P.049 Tanjong,1,Lim Hui Ying,LIM HUI YING,59,female,chinese,PAKATAN
 Pulau Pinang,P.049 Tanjong,2,Tan Kim Nee,TAN KIM NEE,37,female,chinese,BARISAN NASIONAL (BN),3214,0,lost_deposit
 Pulau Pinang,P.049 Tanjong,3,H'Ng Khoon Leng,AH LENG,58,male,chinese,PERIKATAN NASIONAL (PN),2501,0,lost_deposit
 Pulau Pinang,P.050 Jelutong,1,Sanisvara Nethaji Rayer A/L Rajaji,SANISVARA NETHAJI RAYER (RSN RAYER),51,male,indian,PAKATAN HARAPAN (PH),50369,1,won
-Pulau Pinang,P.050 Jelutong,2,Baljit Singh A/L Jigiri Singh,BALJIT SINGH,56,male,indian,PERIKATAN NASIONAL (PN),11765,0,lost
+Pulau Pinang,P.050 Jelutong,2,Baljit Singh A/L Jigiri Singh,BALJIT SINGH,56,male,other,PERIKATAN NASIONAL (PN),11765,0,lost
 Pulau Pinang,P.050 Jelutong,3,Koh Swe Yong,KOH SWE YONG,71,male,chinese,PARTI RAKYAT MALAYSIA (PRM),264,0,lost_deposit
 Pulau Pinang,P.050 Jelutong,4,Mohamed Yacoob Bin Mohamed Noor,YACOOB BIN NOOR,,male,bumiputera,BEBAS (BEBAS),480,0,lost_deposit
 Pulau Pinang,P.050 Jelutong,5,Loganathan A/L Thoraisamy,DATUK LOGANATHAN A/L THORAISAMY,58,male,bumiputera,BARISAN NASIONAL (BN),7387,0,lost_deposit
 Pulau Pinang,P.050 Jelutong,6,Lim Huat Poh,LIM HUAT POH (MARTIN),53,male,chinese,PARTI WARISAN SABAH (WARISAN),442,0,lost_deposit
 Pulau Pinang,P.051 Bukit Gelugor,1,Thinagaranabhan A/L Padmanabhan,P. THINAGARANABHAN,41,male,indian,PERIKATAN NASIONAL (PN),8092,0,lost_deposit
-Pulau Pinang,P.051 Bukit Gelugor,2,Ramkarpal Singh A/L Karpal Singh,RAMKARPAL SINGH,46,male,indian,PAKATAN HARAPAN (PH),71204,1,won
+Pulau Pinang,P.051 Bukit Gelugor,2,Ramkarpal Singh A/L Karpal Singh,RAMKARPAL SINGH,46,male,other,PAKATAN HARAPAN (PH),71204,1,won
 Pulau Pinang,P.051 Bukit Gelugor,3,Wong Chin Chong,WONG CHIN CHONG,48,male,chinese,BARISAN NASIONAL (BN),6777,0,lost_deposit
 Pulau Pinang,P.052 Bayan Baru,1,Saw Yee Fung,SAW YEE FUNG,33,female,chinese,BARISAN NASIONAL (BN),13377,0,lost
 Pulau Pinang,P.052 Bayan Baru,2,Ooi Chuan Aun,JEFF OOI,67,male,chinese,PARTI WARISAN SABAH (WARISAN),440,0,lost_deposit
@@ -463,7 +463,7 @@ Selangor,P.105 Petaling Jaya,3,Chew Hian Tat,CHEW HIAN TAT,48,male,chinese,BARIS
 Selangor,P.105 Petaling Jaya,4,Mazween Binti Mokhtar,MAZWEEN MOKHTAR,44,female,bumiputera,PARTI PEJUANG TANAHAIR (PEJUANG),4052,0,lost_deposit
 Selangor,P.105 Petaling Jaya,5,Theng Book,DATO THENG BOOK,62,male,chinese,PERIKATAN NASIONAL (PN),32736,0,lost
 Selangor,P.105 Petaling Jaya,6,Lee Chean Chung,LEE CHEAN CHUNG,41,male,chinese,PAKATAN HARAPAN (PH),83311,1,won
-Selangor,P.106 Damansara,1,Gobind Singh Deo,GOBIND SINGH DEO,49,male,indian,PAKATAN HARAPAN (PH),142875,1,won
+Selangor,P.106 Damansara,1,Gobind Singh Deo,GOBIND SINGH DEO,49,male,other,PAKATAN HARAPAN (PH),142875,1,won
 Selangor,P.106 Damansara,2,Lim Si Ching,LIM SI CHING,30,male,chinese,PERIKATAN NASIONAL (PN),18256,0,lost_deposit
 Selangor,P.106 Damansara,3,Tan Gim Tuan,TAN GIM TUAN GT,52,male,chinese,BARISAN NASIONAL (BN),13806,0,lost_deposit
 Selangor,P.107 Sungai Buloh,1,Ahmad Jufliz Bin Faiza,AHMAD JUFLIZ,,male,bumiputera,PARTI RAKYAT MALAYSIA (PRM),279,0,lost_deposit
