@@ -150,11 +150,11 @@ Pulau Pinang,P.048 Bukit Bendera,2,TAN GIN THEAM,48,male,chinese,PARTI BERSAMA M
 Pulau Pinang,P.048 Bukit Bendera,3,ANDY YONG KIM SENG,46,male,chinese,BARISAN NASIONAL (BN),9318,0,lost
 Pulau Pinang,P.049 Tanjong,1,NG SIEW LAI,56,female,chinese,BARISAN NASIONAL (BN),5064,0,lost
 Pulau Pinang,P.049 Tanjong,2,CHOW KON YEOW,59,male,chinese,PARTI KEADILAN RAKYAT (PKR),34663,1,won
-Pulau Pinang,P.050 Jelutong,1,BALJIT SINGH,51,male,indian,BARISAN NASIONAL (BN),12529,0,lost
+Pulau Pinang,P.050 Jelutong,1,BALJIT SINGH,51,male,other,BARISAN NASIONAL (BN),12529,0,lost
 Pulau Pinang,P.050 Jelutong,2,SANISVARA NETRAYER A/L RAJAJI,46,male,indian,PARTI KEADILAN RAKYAT (PKR),50700,1,won
 Pulau Pinang,P.050 Jelutong,3,TAN SIM BEE,37,female,chinese,PARTI BERSAMA MALAYSIA (MU),437,0,lost_deposit
 Pulau Pinang,P.051 Bukit Gelugor,1,LOW JOO HIAP,45,male,chinese,BARISAN NASIONAL (BN),9671,0,lost
-Pulau Pinang,P.051 Bukit Gelugor,2,RAMKARPAL SINGH A/L KARPAL SINGH,42,male,indian,PARTI KEADILAN RAKYAT (PKR),65622,1,won
+Pulau Pinang,P.051 Bukit Gelugor,2,RAMKARPAL SINGH A/L KARPAL SINGH,42,male,other,PARTI KEADILAN RAKYAT (PKR),65622,1,won
 Pulau Pinang,P.051 Bukit Gelugor,3,LAI XUE CHING,33,female,chinese,PARTI BERSAMA MALAYSIA (MU),412,0,lost_deposit
 Pulau Pinang,P.052 Bayan Baru,1,DAVID YIM BOON LEONG,46,male,chinese,PARTI BERSAMA MALAYSIA (MU),733,0,lost_deposit
 Pulau Pinang,P.052 Bayan Baru,2,SIM TZE TZIN,42,male,chinese,PARTI KEADILAN RAKYAT (PKR),51555,1,won
@@ -321,7 +321,7 @@ Selangor,P.102 Bangi,3,DENNIS WAN,36,male,chinese,PARTI RAKYAT MALAYSIA (PRM),21
 Selangor,P.102 Bangi,4,LIEW YUEN KEONG,57,male,chinese,BARISAN NASIONAL (BN),19766,0,lost
 Selangor,P.103 Puchong,1,MOHAMAD ROSHARIZAN,44,male,bumiputera,PARTI ISLAM SE MALAYSIA (PAS),10255,0,lost_deposit
 Selangor,P.103 Puchong,2,ANG CHIN TAT,48,male,chinese,BARISAN NASIONAL (BN),12794,0,lost
-Selangor,P.103 Puchong,3,GOBIND SINGH DEO,44,male,indian,PARTI KEADILAN RAKYAT (PKR),60429,1,won
+Selangor,P.103 Puchong,3,GOBIND SINGH DEO,44,male,other,PARTI KEADILAN RAKYAT (PKR),60429,1,won
 Selangor,P.104 Subang,1,TOH SIN WAH,58,male,chinese,BEBAS (BEBAS),173,0,lost_deposit
 Selangor,P.104 Subang,2,WONG CHEN,49,male,chinese,PARTI KEADILAN RAKYAT (PKR),104430,1,won
 Selangor,P.104 Subang,3,TAN SEONG LIM,51,male,chinese,BARISAN NASIONAL (BN),12077,0,lost_deposit
@@ -595,7 +595,7 @@ Sabah,P.187 Kinabatangan,3,BUNG MOKTAR RADIN,58,male,bumiputera,BARISAN NASIONAL
 Sabah,P.188 Lahad Datu,1,NASRUN BIN MANSUR,65,male,bumiputera,BARISAN NASIONAL (BN),16951,0,lost
 Sabah,P.188 Lahad Datu,2,MOHAMADDIN BIN KETAPI,60,male,bumiputera,PARTI WARISAN SABAH (WARISAN),23352,1,won
 Sabah,P.188 Lahad Datu,3,RAMLI BIN PATARUDDIN ,43,male,bumiputera,PARTI ISLAM SE MALAYSIA (PAS),1431,0,lost_deposit
-Sabah,P.188 Lahad Datu,4,SITI SHAZIANTI BINTI AJAK,27,female,other,PARTI HARAPAN RAKYAT SABAH (HR),1306,0,lost_deposit
+Sabah,P.188 Lahad Datu,4,SITI SHAZIANTI BINTI AJAK,27,female,bumiputera,PARTI HARAPAN RAKYAT SABAH (HR),1306,0,lost_deposit
 Sabah,P.189 Semporna,1,ABDUL NASIR BIN ABDUL RAUP,42,male,bumiputera,PARTI ISLAM SE MALAYSIA (PAS),384,0,lost_deposit
 Sabah,P.189 Semporna,2,ASMARA BIN ASMAD,54,male,bumiputera,PARTI HARAPAN RAKYAT SABAH (HR),98,0,lost_deposit
 Sabah,P.189 Semporna,3,RAMLEE MARAHABAN,54,male,bumiputera,BARISAN NASIONAL (BN),6135,0,lost

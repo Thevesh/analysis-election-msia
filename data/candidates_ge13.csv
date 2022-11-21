@@ -465,7 +465,7 @@ Sabah,P.183 Beluran,1,RONALD KIANDEE,52,male,bumiputera,BARISAN NASIONAL (BN),13
 Sabah,P.183 Beluran,2,RAIMON BIN LANJAT,46,male,bumiputera,PARTI REFORMASI NEGERI SARAWAK (STAR),1460,0,lost_deposit
 Sabah,P.183 Beluran,3,JAMES BIN MIKI,43,male,bumiputera,PARTI KEADILAN RAKYAT (PKR),3186,0,lost
 Sabah,P.183 Beluran,4,KAMARUDDIN BIN MUSTAPHA,50,male,bumiputera,BEBAS (BEBAS),542,0,lost_deposit
-Sabah,P.184 Libaran,1,JUSLIE AJIROL,59,male,other,BARISAN NASIONAL (BN),19584,1,won
+Sabah,P.184 Libaran,1,JUSLIE AJIROL,59,male,bumiputera,BARISAN NASIONAL (BN),19584,1,won
 Sabah,P.184 Libaran,2,SAHAR BIN SAKA,50,male,bumiputera,BEBAS (BEBAS),3219,0,lost_deposit
 Sabah,P.184 Libaran,3,MOHD SERMAN,33,male,bumiputera,PARTI KEADILAN RAKYAT (PKR),7998,0,lost
 Sabah,P.184 Libaran,4,ROSNAH BINTI UNSARI,39,female,bumiputera,PARTI REFORMASI NEGERI SARAWAK (STAR),502,0,lost_deposit
@@ -484,7 +484,7 @@ Sabah,P.188 Lahad Datu,3,NASRUN BIN MANSUR,60,male,bumiputera,BARISAN NASIONAL (
 Sabah,P.188 Lahad Datu,4,DUMI BIN PG. MASDAL,57,male,bumiputera,BEBAS (BEBAS),4959,0,lost
 Sabah,P.189 Semporna,1,MOHD SHAFIE APDAL,55,male,bumiputera,BARISAN NASIONAL (BN),25559,1,won
 Sabah,P.189 Semporna,2,ZAMREE @ MOHD SUFFIAN B ABDUL HABI,41,male,bumiputera,PARTI KEADILAN RAKYAT (PKR),4654,0,lost
-Sabah,P.189 Semporna,3,BADARUDDIN TUN MUSTAPHA,52,male,other,BEBAS (BEBAS),325,0,lost_deposit
+Sabah,P.189 Semporna,3,BADARUDDIN TUN MUSTAPHA,52,male,bumiputera,BEBAS (BEBAS),325,0,lost_deposit
 Sabah,P.190 Tawau,1,MARY YAP KAIN CHING,62,female,chinese,BARISAN NASIONAL (BN),21331,1,won
 Sabah,P.190 Tawau,2,KONG HONG MING,60,male,chinese,PARTI KEADILAN RAKYAT (PKR),16352,0,lost
 Sabah,P.190 Tawau,3,CHUA SOON BUI,58,female,chinese,PARTI MAJU SABAH (SAPP),633,0,lost_deposit
@@ -492,9 +492,9 @@ Sabah,P.190 Tawau,4,AHMAD AWANG,71,male,bumiputera,BEBAS (BEBAS),553,0,lost_depo
 Sabah,P.191 Kalabakan,1,MOHD BIN MANUKE,52,male,bumiputera,BEBAS (BEBAS),1313,0,lost_deposit
 Sabah,P.191 Kalabakan,2,MALVINE REYES,53,male,bumiputera,PARTI REFORMASI NEGERI SARAWAK (STAR),603,0,lost_deposit
 Sabah,P.191 Kalabakan,3,ABDUL GHAPUR BIN SALLEH,70,male,bumiputera,BARISAN NASIONAL (BN),23125,1,won
-Sabah,P.191 Kalabakan,4,FREDDIE JAPAT ANAK SIMOL,61,male,other,BEBAS (BEBAS),137,0,lost_deposit
+Sabah,P.191 Kalabakan,4,FREDDIE JAPAT ANAK SIMOL,61,male,bumiputera,BEBAS (BEBAS),137,0,lost_deposit
 Sabah,P.191 Kalabakan,5,USMAN MADEAMING,36,male,bumiputera,PARTI ISLAM SE MALAYSIA (PAS),8904,0,lost
-Sabah,P.191 Kalabakan,6,YAHYA BIN ZAINAL,60,male,other,BEBAS (BEBAS),132,0,lost_deposit
+Sabah,P.191 Kalabakan,6,YAHYA BIN ZAINAL,60,male,bumiputera,BEBAS (BEBAS),132,0,lost_deposit
 Sabah,P.191 Kalabakan,7,SIAMSIR BIN BORHAN,53,male,bumiputera,BEBAS (BEBAS),891,0,lost_deposit
 Sarawak,P.192 Mas Gading,1,NOGEH ANAK GUMBEK,56,male,bumiputera,BARISAN NASIONAL (BN),8265,1,won
 Sarawak,P.192 Mas Gading,2,PATRICK ANEK UREN,65,male,bumiputera,PARTI REFORMASI NEGERI SARAWAK (STAR),462,0,lost_deposit

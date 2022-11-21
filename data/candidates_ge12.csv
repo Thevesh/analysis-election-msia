@@ -211,7 +211,7 @@ Selangor,P.101 Hulu Langat,2,MARKIMAN KOBIRAN,50,male,bumiputera,BARISAN NASIONA
 Selangor,P.102 Bangi,1,TEO NIE CHING,27,female,chinese,PARTI TINDAKAN DEMOKRATIK (DAP),47444,1,won
 Selangor,P.102 Bangi,2,HOH HEE LEE,47,male,chinese,BARISAN NASIONAL (BN),26419,0,lost
 Selangor,P.103 Puchong,1,LAU YENG PENG,45,male,chinese,BARISAN NASIONAL (BN),22486,0,lost
-Selangor,P.103 Puchong,2,GOBIND SINGH DEO,34,male,indian,PARTI TINDAKAN DEMOKRATIK (DAP),35079,1,won
+Selangor,P.103 Puchong,2,GOBIND SINGH DEO,34,male,other,PARTI TINDAKAN DEMOKRATIK (DAP),35079,1,won
 Selangor,P.104 Subang,1,BILLI LIM,57,male,chinese,BEBAS (BEBAS),1895,0,lost_deposit
 Selangor,P.104 Subang,2,GWO BURNE LOH,34,male,bumiputera,PARTI KEADILAN RAKYAT (PKR),30298,1,won
 Selangor,P.104 Subang,3,LEE HWA BENG,54,male,chinese,BARISAN NASIONAL (BN),25267,0,lost
@@ -339,7 +339,7 @@ Johor,P.164 Pontian,2,MOHD ANNUAR BIN MOHD SALLEH,54,male,bumiputera,PARTI KEADI
 Johor,P.165 Tanjung Piai,1,Wee Jeck SENG,43,male,chinese,BARISAN NASIONAL (BN),23302,1,won
 Johor,P.165 Tanjung Piai,2,AHMAD BIN TON,58,male,bumiputera,PARTI TINDAKAN DEMOKRATIK (DAP),10931,0,lost
 W.P. Labuan,P.166 Labuan,1,YUSSOF BIN MAHAL,50,male,bumiputera,BARISAN NASIONAL (BN),10471,1,won
-W.P. Labuan,P.166 Labuan,2,MATUSIN BIN ABDUL RAHMAN,48,male,other,PARTI ISLAM SE MALAYSIA (PAS),1106,0,lost_deposit
+W.P. Labuan,P.166 Labuan,2,MATUSIN BIN ABDUL RAHMAN,48,male,bumiputera,PARTI ISLAM SE MALAYSIA (PAS),1106,0,lost_deposit
 W.P. Labuan,P.166 Labuan,3,LAU SENG KIAT,47,male,chinese,BEBAS (BEBAS),2014,0,lost
 Sabah,P.167 Kudat,1,YAHYA OTHMAN,59,male,bumiputera,PARTI KEADILAN RAKYAT (PKR),7739,0,lost
 Sabah,P.167 Kudat,2,ABDUL RAHIM BAKRI,46,male,bumiputera,BARISAN NASIONAL (BN),17634,1,won
@@ -394,8 +394,8 @@ Sabah,P.183 Beluran,2,RAMSAH,56,male,bumiputera,BEBAS (BEBAS),2738,0,lost
 Sabah,P.183 Beluran,3,MICHAEL LUBAN,57,male,bumiputera,PARTI KEADILAN RAKYAT (PKR),1271,0,lost_deposit
 Sabah,P.183 Beluran,4,RONALD KIANDEE,47,male,bumiputera,BARISAN NASIONAL (BN),7090,1,won
 Sabah,P.183 Beluran,5,PETRUS RINING,44,male,bumiputera,BEBAS (BEBAS),571,0,lost_deposit
-Sabah,P.184 Libaran,1,AHMAD THAMRIN JAINI,58,male,other,PARTI KEADILAN RAKYAT (PKR),6139,0,lost
-Sabah,P.184 Libaran,2,JUSLIE AJIROL,54,male,other,BARISAN NASIONAL (BN),13668,1,won
+Sabah,P.184 Libaran,1,AHMAD THAMRIN JAINI,58,male,bumiputera,PARTI KEADILAN RAKYAT (PKR),6139,0,lost
+Sabah,P.184 Libaran,2,JUSLIE AJIROL,54,male,bumiputera,BARISAN NASIONAL (BN),13668,1,won
 Sabah,P.185 Batu Sapi,1,EDMUND CHONG KET WAH,51,male,chinese,BARISAN NASIONAL (BN),9479,1,won
 Sabah,P.185 Batu Sapi,2,CHUNG KWONG WING,46,male,chinese,BEBAS (BEBAS),5771,0,lost
 Sabah,P.186 Sandakan,1,FONG VUN FUI,42,male,chinese,BEBAS (BEBAS),2929,0,lost
